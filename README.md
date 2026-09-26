@@ -1,12 +1,16 @@
 # FraudShield AI
 
-Intelligent online transaction fraud detection and real-time monitoring system. Academic prototype built across a 7-day plan. Days 1-4 are included in this repository.
+Intelligent online transaction fraud detection and real-time monitoring system. B.Tech final year academic prototype.
 
-## Structure
-- `ml/` preprocessing, training, prediction, risk engine, explainability and model artifacts
-- `backend/` FastAPI API, JWT authentication, SQLAlchemy models and dashboard/alerts routes
-- `frontend/` React + Vite + Tailwind + Recharts dashboard shell
-- `docs/` architecture, requirements, model card and day logs
+## Days 1–5
+- ML preprocessing, training, risk engine and SHAP explainability.
+- FastAPI + SQLAlchemy + JWT/RBAC prediction backend.
+- Dashboard analytics and alerts.
+- React/Vite/Tailwind/Recharts dashboard.
+- Day 5: JWT-authenticated Socket.IO events, six-scenario simulator, transaction investigation/SHAP panel, admin user management and audit logs.
 
-## Important
-The bundled model artifacts were trained on the synthetic proxy dataset because the real ULB Kaggle CSV was not available in the build environment. Re-run `python ml/src/train.py` after placing the real dataset at `ml/data/raw/creditcard.csv`.
+## Quick start
+See the docs for setup. Backend requires `pip install -r backend/requirements.txt`; frontend requires `npm install`.
+Run `uvicorn app.main:app --reload` from `backend/` and `npm run dev` from `frontend/`.
+
+The trained model in the development bundle uses the synthetic proxy dataset until the real ULB Kaggle CSV is placed in `ml/data/raw/creditcard.csv` and `ml/src/train.py` is rerun.
